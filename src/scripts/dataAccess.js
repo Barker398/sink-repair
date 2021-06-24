@@ -1,12 +1,27 @@
-//const applicationState = 
-
+// Asking the API for the requests
 const API = "http://localhost:8088"
 
-export const fetchRequests = () => {
-    return fetch(`${API}/requests`)
+const applicationState = {
+    requests:[]
+}
+
+export const getRequests = () => {
+    return applicationState.requests.map(request => ({...request}))
+}
+
+export const fetchRequests = (requests) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(requests)
+    }
+
+        return fetch(`${API}/requests`)
         .then(response => response.json())
-        .then(
-            (serviceRequests) => {
+        .then((serviceRequests) => {
                 // Store the external state in application state
                 applicationState.requests = serviceRequests
             }

@@ -1,6 +1,7 @@
 
+
 export const ServiceForm = () => {
-    let html = `
+    const html = `
         <div class="field">
             <label class="label" for="serviceDescription">Description</label>
             <input type="text" name="serviceDescription" class="input" />
