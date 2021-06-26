@@ -1,4 +1,4 @@
-import { fetchRequests } from "./dataAccess.js"
+import { fetchRequests, sendRequest } from "./dataAccess.js"
 import { SinkRepair } from "./SinkRepair.js"
 
 
@@ -11,6 +11,13 @@ const render = () => {
         }
     )
 }
+
+mainContainer.addEventListener(
+    "stateChanged",
+    customEvent => {
+        render()
+     }
+ )
 
 render()
 

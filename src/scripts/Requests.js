@@ -1,6 +1,8 @@
 //Imports the current state of requests.
 import { getRequests } from "./dataAccess.js"
 
+const mainContainer = document.querySelector("#container")
+
 const convertRequests = (request) => {
     return `<li>
         ${request.description} </li>`
