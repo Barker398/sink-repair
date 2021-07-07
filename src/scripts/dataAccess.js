@@ -7,6 +7,8 @@ const applicationState = {
     requests:[]
 }
 
+const mainContainer = document.querySelector('#container')
+
 export const getRequests = () => {
     return applicationState.requests.map(request => ({...request}))
 }
